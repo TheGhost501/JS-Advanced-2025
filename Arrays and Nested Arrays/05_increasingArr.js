@@ -2,11 +2,12 @@ function increase(inputArr) {
     let newArr = [];
     let currentMin = Number.NEGATIVE_INFINITY;
 
-    inputArr.forEach(element => { if(element >= currentMin) {
-        newArr.push(element);
-        currentMin = element;
-    }
-        
+    inputArr.forEach(element => {
+        if (element >= currentMin) {
+            newArr.push(element);
+            currentMin = element;
+        }
+
     });
     return newArr;
 }
