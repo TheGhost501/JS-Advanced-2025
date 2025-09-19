@@ -1,14 +1,14 @@
 function zigZagSort(numArr) {
     let sorted = numArr.sort((a, b) => a - b);
-
+    let iterations = sorted.length;
     let result = [];
-    for (let i = 0; i < sorted.length; i++) {
+    for (let i = 0; i < iterations; i++) {
         if (i % 2 == 0) {
-            result.push(sorted[i]);
+            result.push(sorted.shift());
         } else {
-            result.push(sorted[sorted.length-i])
+            result.push(sorted.pop())
         }
-        
+
     }
     return result;
 
