@@ -1,12 +1,6 @@
 function twoCriteria(arr) {
 
-    let sortedArr = arr.sort((a, b) => {
-        if (a.length !== b.length) {
-            return a.length - b.length;
-        } else {
-            return a.localeCompare(b);
-        }
-    })
+    let sortedArr = arr.sort((a, b) => a.length - b.length || a.localeCompare(b))
 
     return sortedArr.join("\n");
 }
