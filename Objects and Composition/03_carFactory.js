@@ -5,17 +5,11 @@ function carFactory(carSpecs) {
         monsterEngine: { power: 200, volume: 3500 },
     }
 
-    let carriages = {
-        hatchback: { type: "hatchback", color: "" },
-        coupe: { type: "coupe", color: "" }
-    }
-
     let wheelsize = carSpecs.wheelsize % 2 == 0 ? carSpecs.wheelsize - 1 : carSpecs.wheelsize;
 
     let model = carSpecs.model;
     let engine = choseEngine(carSpecs.power, engines);
-    let carCarriage = carriages[carSpecs.carriage];
-    carCarriage.color = carSpecs.color;
+    let carCarriage = carriage = { type: carSpecs.carriage, color: carSpecs.color };
     let wheels = new Array(4).fill(wheelsize);
 
     let newCar = {
